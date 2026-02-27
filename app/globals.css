@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 255 255 255;
+    --fg: 17 24 39;
+    --muted: 107 114 128;
+    --border: 229 231 235;
+    --surface: 249 250 251;
+  }
+  .dark {
+    --bg: 10 10 15;
+    --fg: 243 244 246;
+    --muted: 156 163 175;
+    --border: 31 41 55;
+    --surface: 17 24 39;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] antialiased;
+  }
+  ::selection {
+    @apply bg-accent-500/20 text-accent-700 dark:text-accent-400;
+  }
+}
+
+@layer utilities {
+  .text-muted    { color: rgb(var(--muted)); }
+  .bg-surface    { background-color: rgb(var(--surface)); }
+  .border-base   { border-color: rgb(var(--border)); }
+}
