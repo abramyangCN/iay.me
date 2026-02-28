@@ -6,19 +6,21 @@ import { SectionHeader } from "@/components/SectionHeader";
 interface EducationProps {
   items: ResumeEducation[];
   languages?: ResumeLanguage[];
+  title?: string;
+  locale?: "en" | "zh";
 }
 
-export function Education({ items, languages }: EducationProps) {
+export function Education({ items, languages, title = "Education", locale = "en" }: EducationProps) {
   return (
     <section id="education">
-      <SectionHeader title="Education" />
+      <SectionHeader title={title} />
       <div className="space-y-6">
         {items.map((edu, i) => (
           <FadeIn key={i} delay={i * 0.05}>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
               <div>
                 <h3 className="font-semibold text-sm">
-                  {edu.studyType} in {edu.area}
+                  {edu.studyType}，{edu.area}
                 </h3>
                 {edu.url ? (
                   <a
@@ -34,7 +36,7 @@ export function Education({ items, languages }: EducationProps) {
                 )}
               </div>
               <span className="text-xs text-muted font-mono whitespace-nowrap">
-                {formatDateRange(edu.startDate, edu.endDate)}
+                {formatDateRange(edu.startDate, edu.endDate, locale)}
               </span>
             </div>
           </FadeIn>

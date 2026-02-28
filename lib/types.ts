@@ -62,6 +62,11 @@ export interface ResumeAward {
   summary?: string;
 }
 
+export interface ResumeInterest {
+  name: string;
+  keywords?: string[];
+}
+
 export interface Resume {
   basics: ResumeBasics;
   work?: ResumeWork[];
@@ -70,4 +75,5 @@ export interface Resume {
   education?: ResumeEducation[];
   languages?: ResumeLanguage[];
   awards?: ResumeAward[];
+  interests?: ResumeInterest[];
 }

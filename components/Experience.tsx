@@ -5,12 +5,14 @@ import { SectionHeader } from "@/components/SectionHeader";
 
 interface ExperienceProps {
   items: ResumeWork[];
+  title?: string;
+  locale?: "en" | "zh";
 }
 
-export function Experience({ items }: ExperienceProps) {
+export function Experience({ items, title = "Experience", locale = "en" }: ExperienceProps) {
   return (
     <section id="experience">
-      <SectionHeader title="Experience" />
+      <SectionHeader title={title} />
       <div className="space-y-10">
         {items.map((job, i) => (
           <FadeIn key={i} delay={i * 0.05}>
@@ -34,7 +36,7 @@ export function Experience({ items }: ExperienceProps) {
                   )}
                 </div>
                 <span className="text-xs text-muted whitespace-nowrap font-mono mt-0.5">
-                  {formatDateRange(job.startDate, job.endDate)}
+                  {formatDateRange(job.startDate, job.endDate, locale)}
                 </span>
               </div>
               {job.summary && (

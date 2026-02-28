@@ -4,12 +4,13 @@ import { SectionHeader } from "@/components/SectionHeader";
 
 interface SkillsProps {
   items: ResumeSkill[];
+  title?: string;
 }
 
-export function Skills({ items }: SkillsProps) {
+export function Skills({ items, title = "Skills" }: SkillsProps) {
   return (
     <section id="skills">
-      <SectionHeader title="Skills" />
+      <SectionHeader title={title} />
       <div className="space-y-5">
         {items.map((group, i) => (
           <FadeIn key={i} delay={i * 0.05}>

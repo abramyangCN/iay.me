@@ -1,17 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
-const links = [
+const enLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Projects",   href: "#projects" },
   { label: "Skills",     href: "#skills" },
   { label: "Education",  href: "#education" },
+  { label: "Interests",  href: "#interests" },
+];
+
+const zhLinks = [
+  { label: "经历", href: "#experience" },
+  { label: "项目", href: "#projects" },
+  { label: "技能", href: "#skills" },
+  { label: "教育", href: "#education" },
+  { label: "爱好", href: "#interests" },
 ];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
+  const pathname = usePathname();
+  const isZh = pathname.startsWith("/zh");
+  const links = isZh ? zhLinks : enLinks;
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark"));
@@ -35,7 +48,7 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
-        <a href="#" className="font-semibold text-sm tracking-tight hover:text-accent-500 transition-colors">
+        <a href={isZh ? "/zh" : "/"} className="font-semibold text-sm tracking-tight hover:text-accent-500 transition-colors">
           iay.me
         </a>
         <div className="flex items-center gap-5">
@@ -51,6 +64,14 @@ export function Nav() {
               </li>
             ))}
           </ul>
+          {/* Language switcher */}
+          <a
+            href={isZh ? "/" : "/zh"}
+            className="text-sm text-muted hover:text-[rgb(var(--fg))] transition-colors px-1"
+            aria-label={isZh ? "Switch to English" : "切换为中文"}
+          >
+            {isZh ? "EN" : "中文"}
+          </a>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -69,3 +90,4 @@ export function Nav() {
     </header>
   );
 }
+

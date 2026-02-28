@@ -4,12 +4,13 @@ import { SectionHeader } from "@/components/SectionHeader";
 
 interface ProjectsProps {
   items: ResumeProject[];
+  title?: string;
 }
 
-export function Projects({ items }: ProjectsProps) {
+export function Projects({ items, title = "Projects" }: ProjectsProps) {
   return (
     <section id="projects">
-      <SectionHeader title="Projects" />
+      <SectionHeader title={title} />
       <div className="grid sm:grid-cols-2 gap-4">
         {items.map((project, i) => (
           <FadeIn key={i} delay={i * 0.04}>

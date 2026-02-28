@@ -16,7 +16,7 @@ export function Hero({ basics }: HeroProps) {
             <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-muted mb-6">
               {basics.email && (
                 <a href={`mailto:${basics.email}`} className="hover:text-accent-500 transition-colors flex items-center gap-1.5">
-                  <span>✉</span> {basics.email}
+                  <span>✉️</span> {basics.email}
                 </a>
               )}
               {basics.url && (
