@@ -38,6 +38,9 @@ jobs:
         run: pnpm build
         env:
           RESUME_JSON_URL: ${{ secrets.RESUME_JSON_URL }}
+          # Derive repo name for basePath, e.g. /iay.me
+          # Remove this line once a custom domain is fully configured.
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
