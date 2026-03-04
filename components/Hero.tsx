@@ -12,8 +12,8 @@ export function Hero({ basics }: HeroProps) {
         <div className="flex items-start justify-between gap-6">
           <div className="flex-1">
             <h1 className="text-4xl font-bold tracking-tight mb-2">{basics.name}</h1>
-            <p className="text-accent-500 font-medium mb-5">{basics.label}</p>
-            <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-muted mb-6">
+            <p className="text-accent-500 font-medium mb-5 print:mb-3">{basics.label}</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-muted mb-6 print:mb-3">
               {basics.email && (
                 <a href={`mailto:${basics.email}`} className="hover:text-accent-500 transition-colors flex items-center gap-1.5">
                   <span>✉️</span> {basics.email}
@@ -31,7 +31,7 @@ export function Hero({ basics }: HeroProps) {
               )}
             </div>
             {basics.profiles && basics.profiles.length > 0 && (
-              <div className="flex gap-3 mb-8">
+              <div className="flex gap-3 mb-8 print:mb-4">
                 {basics.profiles.map((p) => (
                   <a
                     key={p.network}

@@ -19,7 +19,7 @@ export default async function ZhPage() {
   const resume = await getResume("zh");
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 print:space-y-5">
       <Hero basics={resume.basics} />
       {resume.work      && <Experience items={resume.work}      title="工作经历" locale="zh" />}
       {resume.projects  && <Projects   items={resume.projects}  title="项目经历" />}

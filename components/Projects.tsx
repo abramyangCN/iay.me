@@ -11,10 +11,10 @@ export function Projects({ items, title = "Projects" }: ProjectsProps) {
   return (
     <section id="projects">
       <SectionHeader title={title} />
-      <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-4 print:gap-2">
         {items.map((project, i) => (
-          <FadeIn key={i} delay={i * 0.04}>
-            <div className="group h-full rounded-xl border border-base hover:border-accent-500/50 bg-surface hover:shadow-md hover:shadow-accent-500/5 transition-all duration-200 p-5 flex flex-col gap-3">
+          <FadeIn key={i} delay={i * 0.04} className={i === 0 ? "sm:col-span-2" : ""}>
+            <div className="group h-full rounded-xl border border-base hover:border-accent-500/50 bg-surface hover:shadow-md hover:shadow-accent-500/5 transition-all duration-200 p-5 flex flex-col gap-3 print:break-inside-avoid print:rounded print:p-2 print:gap-1.5">
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h3 className="font-semibold text-sm">{project.name}</h3>

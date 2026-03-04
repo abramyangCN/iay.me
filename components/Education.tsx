@@ -17,7 +17,7 @@ export function Education({ items, languages, title = "Education", locale = "en"
       <div className="space-y-6">
         {items.map((edu, i) => (
           <FadeIn key={i} delay={i * 0.05}>
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 print:break-inside-avoid">
               <div>
                 <h3 className="font-semibold text-sm">
                   {edu.studyType}，{edu.area}

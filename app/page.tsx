@@ -12,7 +12,7 @@ export default async function Home() {
   const resume = await getResume();
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 print:space-y-5">
       <Hero basics={resume.basics} />
       {resume.work      && <Experience items={resume.work} />}
       {resume.projects  && <Projects   items={resume.projects} />}

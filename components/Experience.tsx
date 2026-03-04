@@ -16,7 +16,7 @@ export function Experience({ items, title = "Experience", locale = "en" }: Exper
       <div className="space-y-10">
         {items.map((job, i) => (
           <FadeIn key={i} delay={i * 0.05}>
-            <div className="group relative pl-5 border-l-2 border-[rgb(var(--border))] hover:border-accent-500 transition-colors">
+            <div className="group relative pl-5 border-l-2 border-[rgb(var(--border))] hover:border-accent-500 transition-colors print:break-inside-avoid print:border-l print:pl-3 print:mb-3">
               <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-[rgb(var(--border))] group-hover:bg-accent-500 transition-colors" />
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
                 <div>

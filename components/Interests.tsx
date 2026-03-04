@@ -14,7 +14,7 @@ export function Interests({ items, title = "Interests" }: InterestsProps) {
       <div className="space-y-5">
         {items.map((interest, i) => (
           <FadeIn key={i} delay={i * 0.05}>
-            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-5">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-5 print:break-inside-avoid">
               <span className="text-sm font-medium w-48 flex-shrink-0 text-[rgb(var(--fg))]">
                 {interest.name}
               </span>
