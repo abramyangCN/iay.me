@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "杨海涛 · 简历",
+  title: "杨杨 · 简历",
   description: "高级前端工程师 — 个人简历与作品集。",
   alternates: { canonical: "https://iay.me/zh" },
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -48,9 +49,9 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
-        <a href={isZh ? "/zh" : "/"} className="font-semibold text-sm tracking-tight hover:text-accent-500 transition-colors">
+        <Link href={isZh ? "/zh" : "/"} className="font-semibold text-sm tracking-tight hover:text-accent-500 transition-colors">
           iay.me
-        </a>
+        </Link>
         <div className="flex items-center gap-5">
           <ul className="hidden sm:flex items-center gap-5">
             {links.map((l) => (
@@ -65,13 +66,13 @@ export function Nav() {
             ))}
           </ul>
           {/* Language switcher */}
-          <a
+          <Link
             href={isZh ? "/" : "/zh"}
             className="text-sm text-muted hover:text-[rgb(var(--fg))] transition-colors px-1"
             aria-label={isZh ? "Switch to English" : "切换为中文"}
           >
             {isZh ? "EN" : "中文"}
-          </a>
+          </Link>
           {/* Print / Save PDF */}
           <button
             onClick={() => window.print()}
